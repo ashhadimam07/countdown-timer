@@ -230,19 +230,20 @@ input[type=number] {
 
   #min-label {
     font-size: 21px;
-    margin-right: 20px;
+    margin-right: 0;
     }
 
   #sec-label {
     font-size: 21px;
     margin-right: 20px; 
+    margin-left: 15px;
     }
 
   #hour,
   #minute,
   #sec {
     font-size: 25px;
-    margin-left: 40px;
+    margin-left: 1;
     }
 
   .semicolon {
