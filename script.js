@@ -17,23 +17,17 @@ function timer() {
         s.value = 0;
     } else if(s.value != 0) {
         s.value -= 1;
-        if(s.value == 0) {
-            stopInterval();
-        }
     } else if(m.value != 0 && s.value == 0) {
         s.value = 59;
         m.value -= 1;
-        if(s.value == 0 && m.value == 0) {
-            stopInterval();
-        }
     } else if(h.value != 0 && m.value == 0) {
         m.value = 60;
         h.value -= 1;
-        if(s.value == 0 && m.value == 0 && h.value == 0) {
-            stopInterval();
-        }
     }
-    return;
+    
+    if(h.value == 0 && m.value == 0 && s.value == 0) {
+        stopInterval();
+    }
 }
 
 start.addEventListener('click', function() {
@@ -46,8 +40,8 @@ start.addEventListener('click', function() {
 });
 
 reset.addEventListener('click', function() {
-    h.value = 0;
-    m.value = 0;
-    s.value = 0;
+    h.value = '';
+    m.value = '';
+    s.value = '';
     stopInterval();
 });
