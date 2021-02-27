@@ -254,6 +254,15 @@ input[type=number] {
     }
 }
 
+::placeholder {
+  color: wheat;
+  text-align: center;
+}
+
+input {
+  text-align: center;
+}
+
 @media (max-width: 1050px) {
   .menu-toggle {
     display: block;

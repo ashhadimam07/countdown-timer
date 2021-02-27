@@ -23,12 +23,12 @@
         <p id="hour-label" class="label">Hours</p>
         <p id="min-label" class="label">Minutes</p>
         <p id="sec-label" class="label">Seconds</p>
-        <input id="hour" type="number" max="99" min="0" value="0" class="time">
+        <input id="hour" type="number" max="99" min="0" placeholder="00" onkeyup="manage(this)" class="time">
         <p id="p1" class="semicolon">:</p>
-        <input id="minute" type="number" max="60" min="0" value="0" class="time">
+        <input id="minute" type="number" max="60" min="0" placeholder="00" onkeyup="manage(this)" class="time">
         <p id="p2" class="semicolon">:</p>
-        <input id="sec" type="number" max="60" min="0" value="0" class="time">
-        <button id="start" class="btn">Start</button>
+        <input id="sec" type="number" max="60" min="0" placeholder="00" onkeyup="manage(this)" class="time">
+        <button id="start" class="btn" disabled>Start</button>
         <button id="reset" class="btn">Reset</button>
     </div>
     <footer class="footer">
@@ -43,6 +43,22 @@
                 $('nav').toggleClass('active')
             })
         })
+    </script>
+    <script>
+        function manage(txt) {
+            var bt = document.getElementById('start');
+            var ele = document.getElementsByTagName('input'); 
+
+            for (i = 0; i < ele.length; i++) {
+                if (ele[i].type == 'text' && ele[i].value == '') {
+                    bt.disabled = true;
+                    return false;
+                }
+                else {
+                    bt.disabled = false;
+                }
+            }
+        }    
     </script>
     <script src="/script.js"></script>
 </body>
