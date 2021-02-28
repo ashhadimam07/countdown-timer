@@ -50,7 +50,7 @@
             var ele = document.getElementsByTagName('input'); 
 
             for (i = 0; i < ele.length; i++) {
-                if (ele[i].type == 'text' && ele[i].value == '') {
+                if (ele[i].type == 'number' && ele[i].value == '') {
                     bt.disabled = true;
                     return false;
                 }
